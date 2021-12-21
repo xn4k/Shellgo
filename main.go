@@ -56,3 +56,4 @@ func main() {
 	b(MyIP) //Wert aus andere Function weitergeben
 
 }
+
