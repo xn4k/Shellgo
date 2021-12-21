@@ -44,7 +44,15 @@ func a() {
 	fmt.Println("you took", choosenS, "shell")
 }
 
+
+func b(insertme) {
+	const ip = insertme
+	fmt.Println(ip)
+}
+
 func main() {
 	a()
-	getOutboundIP()
+	const MyIP = getOutboundIP() //Macht aus der IP eine Constante, var für Variable :>
+	b(MyIP) //Wert aus andere Function weitergeben
+
 }
