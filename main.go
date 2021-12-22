@@ -20,7 +20,7 @@ const ncS =
 }*/
 
 // Get preferred outbound ip of this machine
-func getOutboundIP() net.IP {
+func supply() net.IP {
 	conn, err := net.Dial("udp", "8.8.8.8:80")
 	if err != nil {
 		log.Fatal(err)
@@ -53,5 +53,5 @@ func a() {
 
 func main() {
 	a()
-	getOutboundIP()
+	supply()
 }
