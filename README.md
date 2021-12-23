@@ -1,5 +1,5 @@
 ﻿# Shellmaker
 
-I am trying to write a little reverse shell maker,<br>
-
-this code is growing, and I am working on it in my free time.<br>
+Little shell tool, to automatize the process of creating a
+reverse shell.<br>
+Feel free to contribute if i missed something and have fun reading my code :p.<br>
