@@ -15,7 +15,7 @@ letsglow_PRODUCTION
 }*/
 
 //@formatter:off
-var denis =     "penis" // i am the ugly formatter from GOland and now i am off
+var denis = "penis" // i am the ugly formatter from GOland and now i am off
 						// because of this sweet comments
 //@formatter:on
 // Get preferred outbound ip of this machine
